@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { PaisComponent } from './pages/pais/pais.component';
+import { PaisesComponent } from './pages/paises/paises.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PaisComponent
+    PaisComponent,
+    PaisesComponent
   ],
   imports: [
     BrowserModule

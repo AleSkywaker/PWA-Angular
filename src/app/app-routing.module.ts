@@ -1,9 +1,6 @@
-import { NgModule } from '@angular/core';
+import { NgModule } from "@angular/core";
 
 @NgModule({
-
-  imports: [
-
-  ]
+  imports: []
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

@@ -11,7 +11,11 @@ export class PaisesService {
 
   constructor(private http: HttpClient) { }
 
-  getPaises(){
+  getPaises(): Promise<PaisInterface[]>{
+
+    if (this.getPaises.length > 0){
+       return Promise.resolve(this.paises)
+    }
     this.http.get('https://restcountries.eu/rest/v2/lang/es')
      .subscribe(  (paises:PaisInterface[]) =>{
         console.log(paises);

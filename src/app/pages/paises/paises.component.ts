@@ -1,6 +1,7 @@
 import { PaisInterface } from './../../interfaces/pais.interface';
 import { PaisesService } from './../../services/paises.service';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-paises',
@@ -11,7 +12,9 @@ export class PaisesComponent implements OnInit {
 
   paises: PaisInterface[] = [];
 
-  constructor( public paisesService : PaisesService) { }
+  constructor( 
+    public paisesService : PaisesService,
+    private activatedRoute : ActivatedRoute) { }
 
   ngOnInit() {
     this.paisesService.getPaises()

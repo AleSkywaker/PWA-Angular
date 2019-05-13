@@ -16,6 +16,10 @@ export class PaisComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+
+    const id = this.activatedRoute.snapshot.paramMap.get('id');
+    console.log(id)
+
   }
 
 }

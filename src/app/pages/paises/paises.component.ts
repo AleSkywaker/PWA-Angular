@@ -1,7 +1,7 @@
 import { PaisInterface } from './../../interfaces/pais.interface';
 import { PaisesService } from './../../services/paises.service';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-paises',
@@ -14,7 +14,9 @@ export class PaisesComponent implements OnInit {
 
   constructor( 
     public paisesService : PaisesService,
-    private activatedRoute : ActivatedRoute) { }
+    private activatedRoute : ActivatedRoute,
+    private router : Router
+    ) { }
 
   ngOnInit() {
     this.paisesService.getPaises()

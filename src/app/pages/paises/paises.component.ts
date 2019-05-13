@@ -1,3 +1,5 @@
+import { PaisInterface } from './../../interfaces/pais.interface';
+import { PaisesService } from './../../services/paises.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PaisesComponent implements OnInit {
 
-  constructor() { }
+  paises: PaisInterface[] = [];
+
+  constructor( public paisesService : PaisesService) { }
 
   ngOnInit() {
+    this.paisesService.getPaises()
+      .then(paises =>  this.paises = paises )
   }
 
 }

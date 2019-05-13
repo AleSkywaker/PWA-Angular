@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PaisesService } from '../../services/paises.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-pais',
@@ -7,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PaisComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public paisesService : PaisesService,
+    private activatedRoute : ActivatedRoute,
+    private router : Router
+  ) { }
 
   ngOnInit() {
   }

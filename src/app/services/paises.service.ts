@@ -35,6 +35,9 @@ export class PaisesService {
       const pais = this.paises.find( p => p.alpha3Code === id);
       return Promise.resolve( pais )
     }
-
+    return this.getPaises().then(paises => {
+      const pais = this.paises.find( p => p.alpha3Code === id);
+      return Promise.resolve( pais )
+    })
   }
 }

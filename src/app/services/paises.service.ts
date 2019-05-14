@@ -26,4 +26,13 @@ export class PaisesService {
         });
     });
   }
+
+
+  getPais(id:any){
+
+    if(this.paises){
+      this.paises.find(id)
+    }
+
+  }
 }

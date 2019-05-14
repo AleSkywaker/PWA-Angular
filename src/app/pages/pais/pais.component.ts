@@ -19,7 +19,13 @@ export class PaisComponent implements OnInit {
 
     const id = this.activatedRoute.snapshot.paramMap.get('id');
     console.log(id)
+    this.paisesService.getPais(id).then(pais => {
 
+      if(!pais){
+        return this.router.navigateByUrl('/')
+      }
+      console.log(pais)
+    })
   }
 
 }

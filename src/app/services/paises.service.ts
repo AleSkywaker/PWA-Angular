@@ -33,7 +33,7 @@ export class PaisesService {
     if(this.paises.length > 0){
       // Hay paises en este array
       const pais = this.paises.find( p => p.alpha3Code === id);
-      
+      return Promise.resolve( pais )
     }
 
   }

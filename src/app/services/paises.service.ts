@@ -28,10 +28,12 @@ export class PaisesService {
   }
 
 
-  getPais(id:any){
+  getPais(id:string){
 
-    if(this.paises){
-      this.paises.find(id)
+    if(this.paises.length > 0){
+      // Hay paises en este array
+      const pais = this.paises.find( p => p.alpha3Code === id);
+      
     }
 
   }

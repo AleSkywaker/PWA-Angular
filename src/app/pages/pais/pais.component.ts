@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PaisesService } from '../../services/paises.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { PaisInterface } from '../../interfaces/pais.interface';
 
 @Component({
   selector: 'app-pais',
@@ -9,6 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class PaisComponent implements OnInit {
 
+  public pais: PaisInterface;
   constructor(
     public paisesService : PaisesService,
     private activatedRoute : ActivatedRoute,
@@ -18,12 +20,12 @@ export class PaisComponent implements OnInit {
   ngOnInit() {
 
     const id = this.activatedRoute.snapshot.paramMap.get('id');
-    console.log(id)
     this.paisesService.getPais(id).then(pais => {
 
       if(!pais){
         return this.router.navigateByUrl('/')
       }
+      this.pais = pais;
       console.log(pais)
     })
   }
